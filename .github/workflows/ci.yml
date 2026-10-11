@@ -1,14 +1,14 @@
 name=devops pipeline
 
 on:
-  push:
-    branches:
-      - master 
-      - develop
-  pull request:
-    braches:
-      - master
-      - devlop
+ push:
+  branches:
+    - master 
+    - develop
+ pull request:
+  branches:
+    - master
+    - devlop
 
 jobs:
   test:
@@ -31,5 +31,4 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
-
 
