@@ -2,7 +2,7 @@ from fastapi.testclient import TestClient
 
 from app.main import deva
 
-client = TestClient(app)
+client = TestClient(deva)
 
 
 def test_root():
