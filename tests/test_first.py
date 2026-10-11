@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 
-from deva.main import app
+from app.main import deva
 
 client = TestClient(app)
 
