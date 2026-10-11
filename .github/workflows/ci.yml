@@ -1,14 +1,14 @@
 name: devops pipeline
 
 on:
- push:
-  branches:
-    - master 
-    - develop
- pull request:
-  branches:
-    - master
-    - devlop
+  push:
+   branches:
+     - master 
+     - develop
+  pull_request:
+   branches:
+     - master
+     - devlop
 
 jobs:
   test:
