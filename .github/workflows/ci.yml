@@ -40,7 +40,8 @@ jobs:
           docker run -d \
             --name devops-fastapi-test \
             -p 8000:8000 \
-            devops-fastapi:ci
+            fastapi-docker:ci
+
 
       - name: Test application endpoints
         run: |
