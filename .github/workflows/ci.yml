@@ -32,3 +32,8 @@ jobs:
       - name: Run tests
         run: python -m pytest -v
 
+      - name: docker image
+        run: docker build -t fastapi-docker:ci .
+
+
+
