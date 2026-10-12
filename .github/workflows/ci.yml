@@ -49,6 +49,7 @@ jobs:
           curl --fail http://localhost:8000/
           curl --fail http://localhost:8000/health
 
-      
-
+      - name: docker stop
+        run: |
+          docker rm -d --name devops-fastapi-test
 
