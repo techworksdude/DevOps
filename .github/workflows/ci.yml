@@ -35,12 +35,19 @@ jobs:
       - name: docker image
         run: docker build -t fastapi-docker:ci .
 
-      - name: Run Docker container
+      # - name: Run Docker container
+      #   run: |
+      #     docker run -d \
+      #       --name devops-fastapi-test \
+      #       -p 8000:8000 \
+      #       fastapi-docker:ci
+
+      - name: Run Docker container-2
         run: |
-          docker run -d \
-            --name devops-fastapi-test \
-            -p 8000:8000 \
-            fastapi-docker:ci
+            docker run -d \
+              --name devops-fastapi-test-2 \
+              -p 8000:8000 \
+              fastapi-docker:ci
 
 
       - name: Test application endpoints
@@ -52,4 +59,5 @@ jobs:
       - name: docker stop
         run: |
           docker rm -d --name devops-fastapi-test
+          docker rm -d --name devops-fastapi-test-2
 
