@@ -35,5 +35,21 @@ jobs:
       - name: docker image
         run: docker build -t fastapi-docker:ci .
 
+      - name: Run Docker container
+        run: |
+          docker run -d \
+            --name devops-fastapi-test \
+            -p 8000:8000 \
+            devops-fastapi:ci
+
+      - name: Test application endpoints
+        run: |
+          sleep 3
+          curl --fail http://localhost:8000/
+          curl --fail http://localhost:8000/health
+
+      - name: Stop Docker container
+        if: always()
+        run: docker rm -f devops-fastapi-test
 
 
